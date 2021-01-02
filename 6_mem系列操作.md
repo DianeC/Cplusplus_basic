@@ -5,12 +5,12 @@
 ```
 void *memcpy(void *dest, const void *src, size_t count)
 {
-	char *tmp = dest;
+	char *tmp = dest;//转换类型,第一步没有判断count是不是大于0的原因是size_t是无符号整形
 	const char *s = src;
 
 	while (count--)
 		*tmp++ = *s++;
-	return dest;
+	return dest;//注意类型是void
 }
 ```
 
@@ -31,22 +31,22 @@ void *memcpy(void *dest, const void *src, size_t count)
 ```
 void *memmove(void *dest, const void *src, size_t count)
 {
-	char *tmp;
-	const char *s;
+	char *tmp=dest;
+	const char *s=src;
 
-	if (dest <= src) {
-		tmp = dest;
-		s = src;
-		while (count--)
-			*tmp++ = *s++;
-	} else {
-		tmp = dest;
-		tmp += count;
-		s = src;
-		s += count;
-		while (count--)
-			*--tmp = *--s;
+	if (dest <= src)
+    {
+	while (count--)
+		*tmp++ = *s++;
+	} 
+    else 
+    {
+	tmp += count;
+	s += count;
+	while (count--)
+		*--tmp = *--s;
 	}
+
 	return dest;
 }
 ```
@@ -54,13 +54,13 @@ void *memmove(void *dest, const void *src, size_t count)
 
 ### 2.strcpy
 ```
-char *strcpy(char *strDest, const char *strSrc)
+char *(char *strDest, const char *strSrc)
 {
     if ( strDest == NULL || strSrc == NULL)
         return NULL ;
     if ( strDest == strSrc)
         return strDest ;
-    char *tempptr = strDest ;
+    char *tempptr = strDest ;//为什么要这个量，感觉不是必要
     while( (*strDest++ = *strSrc++) != '\0');
     
     return tempptr ;
@@ -70,18 +70,16 @@ char *strcpy(char *strDest, const char *strSrc)
 
 ### 3.strcat
 ```
-//将src字符串连接到desc中
-char* mystrcat(char* desc, const char* src)
+char * strcat(char * dest, const char * src)
 {
-    if (desc == NULL || src == NULL)
-    {
-        return NULL;
-    }
-    char* str = desc;
-    while (*src++ != '\0'); // 第一步：找出目的字符串的结尾
-    src--;
-    while ((*desc++ = *src++) != '\0');//第二步：将源字符串添加到目的字符串
-    return str;
+    char *tmp = dest;//为什么需要
+
+    while (*dest)
+            dest++;
+    while ((*dest++ = *src++) != '\0')
+            ;
+
+    return tmp;
 }
 ```
 
@@ -114,18 +112,18 @@ int strlen(char *s)
 /*将s所指向的某一块内存中的前n个字节的内容全部设置为ch指定的ASCII值，返回s*/
 void* memset(void* dst,int val, size_t count)
 {
-    if (dst == NULL && n < 0)
+    if (dst == NULL)
     {
-        cout << "赋值出现错误" << endl;
-        return;
+        return NULL;
     }
-    void* ret = dst;
+
+    char* temp = dst;
     while(count--)
     {
-        *(char*)dst = (char)val;
-        dst = (char*)dst + 1; 
+        *temp++ = (char)val;
     }
-    return ret;
+
+    return dst;
 }
 ```
  
@@ -133,11 +131,8 @@ void* memset(void* dst,int val, size_t count)
 ```
 int mystrcmp(const char* str1, const char* str2)
 {
-    while (*str1 && *str2 && *str1 == *str2)
-    {
-        str1++;
-        str2++;
-    }
+    while (*str1 && *str2 && *str1++ == *str2++)
+     ;
     return *str1 - *str2;
 }
 ```
