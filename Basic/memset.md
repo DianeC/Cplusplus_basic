@@ -54,7 +54,7 @@ void *memmove(void *dest, const void *src, size_t count)
 
 ### 2.strcpy
 ```
-char *(char *strDest, const char *strSrc)
+char * strcpy(char *strDest, const char *strSrc)
 {
     if ( strDest == NULL || strSrc == NULL)
         return NULL ;
