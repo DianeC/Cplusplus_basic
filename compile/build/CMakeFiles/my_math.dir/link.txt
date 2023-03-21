@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -dynamiclib -Wl,-headerpad_max_install_names -o libmy_math.dylib -install_name @rpath/libmy_math.dylib CMakeFiles/my_math.dir/my_math.cpp.o 

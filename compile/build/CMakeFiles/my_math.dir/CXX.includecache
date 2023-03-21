@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/caicai/Desktop/code/Cplusplus_basic/Cplusplus_basic/compile/my_math.cpp
+my_math.h
+/Users/caicai/Desktop/code/Cplusplus_basic/Cplusplus_basic/compile/my_math.h
+
+/Users/caicai/Desktop/code/Cplusplus_basic/Cplusplus_basic/compile/my_math.h
+

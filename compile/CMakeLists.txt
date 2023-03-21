@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.19)
 project(plus)
 
 # header
@@ -9,12 +9,12 @@ include_directories(HEADER)
 set(SRC my_math.cpp)
 
 #lib
-add_library(my_math SHARD
+add_library(my_math SHARED
     ${SRC}
 )
 
 # exec
-add_excutable(run_my_math
+add_executable(run_my_math
     main.cpp
 )
 

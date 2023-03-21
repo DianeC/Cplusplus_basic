@@ -1,0 +1,4 @@
+/Users/caicai/Desktop/code/Cplusplus_basic/Cplusplus_basic/compile/build/CMakeFiles/rebuild_cache.dir
+/Users/caicai/Desktop/code/Cplusplus_basic/Cplusplus_basic/compile/build/CMakeFiles/edit_cache.dir
+/Users/caicai/Desktop/code/Cplusplus_basic/Cplusplus_basic/compile/build/CMakeFiles/run_my_math.dir
+/Users/caicai/Desktop/code/Cplusplus_basic/Cplusplus_basic/compile/build/CMakeFiles/my_math.dir

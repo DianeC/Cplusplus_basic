@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/run_my_math.dir/main.cpp.o -o run_my_math  -Wl,-rpath,/Users/caicai/Desktop/code/Cplusplus_basic/Cplusplus_basic/compile/build libmy_math.dylib 
