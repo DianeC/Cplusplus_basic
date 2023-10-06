@@ -5,7 +5,7 @@
 - 一般是自底向上的吗
 - 主要为找到递推公式，例如打家劫舍（II可以拆解成1），路径数量推导
 - 或者进行问题转化，例如【目标和】问题，需要转化成01背包问题
-- 股票买入卖出： 状态转换关系
+- 股票买入卖出： 状态转换关系 https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/?envType=study-plan-v2&envId=leetcode-75
 - //求最大值的情况下，初值一定要设置成理论最大/最小值INT_MIN
 
 背包：组合问题；最大最小问题；true和false的问题
@@ -30,7 +30,7 @@ y = x^(1/x) 的极大值
 即此时x=e
 
 ## 2 dfs+回溯法
-对于需要暴力搜索所有满足条件的结果的情况，使用dfs+回溯法；动态规划只需要一个最优结果即可
+1. 对于需要暴力搜索所有满足条件的结果的情况，使用dfs+回溯法；动态规划只需要一个最优结果即可
 标准模版：可以应对排列和组合问题
 全局结果res
 dfs()
@@ -49,8 +49,16 @@ dfs()
     }
 }
 
+2. bfs 与 dfs
+- 钥匙问题：https://leetcode.cn/problems/keys-and-rooms/solutions/18826/7xing-dfs-8xing-bfs-liang-chong-fang-fa-san-chong-/?envType=study-plan-v2&envId=leetcode-75
+- 腐烂的橘子：https://leetcode.cn/problems/rotting-oranges/?envType=study-plan-v2&envId=leetcode-75
+
+3. backtrace：数组和问题
+- https://leetcode.cn/problems/combination-sum-iii/?envType=study-plan-v2&envId=leetcode-75
+
 单调栈是啥？？
 ## 3 并查集
+1. 省份数量：https://leetcode.cn/problems/number-of-provinces/solutions/?envType=study-plan-v2&envId=leetcode-75
 
 ## 4 位运算
 1. ^异或：相同为0，不同为1，0^n=n, **异或^运算具有交换、结合性质**
@@ -78,6 +86,9 @@ dfs()
 - 即，维护两个栈，一个用来正常存取，一个用来更新当前的最小值
 - 详解：https://www.cnblogs.com/linkstar/p/6114416.html
 - [code](code/12_min_stack.cpp)
+
+### 2.2 单调栈
+- 单调栈：https://leetcode.cn/problems/daily-temperatures/?envType=study-plan-v2&envId=leetcode-75
 
 
 ## 3 最大最小堆
